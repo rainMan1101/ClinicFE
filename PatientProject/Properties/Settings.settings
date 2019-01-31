@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Clinic.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ip_addres_for_services" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192.168.1.78</Value>
+    </Setting>
+    <Setting Name="ip_addres_for_database" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192.168.1.78</Value>
+    </Setting>
+    <Setting Name="port_database" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5432</Value>
+    </Setting>
+    <Setting Name="port_services" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">80</Value>
+    </Setting>
+    <Setting Name="ImageService" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/mono/ImageService.asmx</Value>
+    </Setting>
+    <Setting Name="PatientService" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/mono/PatientService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

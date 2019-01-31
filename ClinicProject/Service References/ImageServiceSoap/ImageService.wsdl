@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SaveImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="binary_array" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="format_string" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveImageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="file_path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadImageResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="file_path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveImageResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SaveImageSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveImage" />
+  </wsdl:message>
+  <wsdl:message name="SaveImageSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadImageSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadImage" />
+  </wsdl:message>
+  <wsdl:message name="LoadImageSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveImageSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveImage" />
+  </wsdl:message>
+  <wsdl:message name="RemoveImageSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveImageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ImageServiceSoap">
+    <wsdl:operation name="SaveImage">
+      <wsdl:input message="tns:SaveImageSoapIn" />
+      <wsdl:output message="tns:SaveImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadImage">
+      <wsdl:input message="tns:LoadImageSoapIn" />
+      <wsdl:output message="tns:LoadImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveImage">
+      <wsdl:input message="tns:RemoveImageSoapIn" />
+      <wsdl:output message="tns:RemoveImageSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ImageServiceSoap" type="tns:ImageServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveImage">
+      <soap:operation soapAction="http://tempuri.org/SaveImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadImage">
+      <soap:operation soapAction="http://tempuri.org/LoadImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveImage">
+      <soap:operation soapAction="http://tempuri.org/RemoveImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ImageServiceSoap12" type="tns:ImageServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveImage">
+      <soap12:operation soapAction="http://tempuri.org/SaveImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadImage">
+      <soap12:operation soapAction="http://tempuri.org/LoadImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveImage">
+      <soap12:operation soapAction="http://tempuri.org/RemoveImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ImageService">
+    <wsdl:port name="ImageServiceSoap" binding="tns:ImageServiceSoap">
+      <soap:address location="http://localhost:64772/ImageService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ImageServiceSoap12" binding="tns:ImageServiceSoap12">
+      <soap12:address location="http://localhost:64772/ImageService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

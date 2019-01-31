@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12A67B90-C065-4F71-93B8-BBDA7A8FA3E3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PatientProject</RootNamespace>
+    <AssemblyName>PatientProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PatientProject.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\History.cs" />
+    <Compile Include="Classes\Info.cs" />
+    <Compile Include="Classes\Patient.cs" />
+    <Compile Include="PrintWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintWindow.Designer.cs">
+      <DependentUpon>PrintWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\PatientServiceSoap\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UserContents\AllDoctors.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContents\AllDoctors.Designer.cs" />
+    <Compile Include="UserContents\Doctor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContents\Doctor.Designer.cs" />
+    <Compile Include="UserContents\Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContents\Login.Designer.cs" />
+    <Compile Include="UserContents\MyMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContents\MyMenu.Designer.cs" />
+    <Compile Include="UserContents\Preview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContents\Preview.Designer.cs" />
+    <Compile Include="UserContents\Rasp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContents\Rasp.Designer.cs" />
+    <Compile Include="UserContents\Record.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContents\Record.Designer.cs" />
+    <Compile Include="UserContents\Talon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContents\Talon.Designer.cs" />
+    <Compile Include="UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <None Include="Service References\PatientServiceSoap\PatientProject.PatientServiceSoap.generateTalonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PatientServiceSoap\PatientProject.PatientServiceSoap.getMedCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PatientServiceSoap\PatientProject.PatientServiceSoap.getTalonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PatientServiceSoap\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PatientServiceSoap\configuration.svcinfo" />
+    <None Include="Service References\PatientServiceSoap\configuration91.svcinfo" />
+    <None Include="Service References\PatientServiceSoap\PatientService.disco" />
+    <EmbeddedResource Include="PrintWindow.resx">
+      <DependentUpon>PrintWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserContents\AllDoctors.resx" />
+    <EmbeddedResource Include="UserContents\Doctor.resx" />
+    <EmbeddedResource Include="UserContents\Login.resx" />
+    <EmbeddedResource Include="UserContents\MyMenu.resx" />
+    <EmbeddedResource Include="UserContents\Preview.resx" />
+    <EmbeddedResource Include="UserContents\Rasp.resx" />
+    <EmbeddedResource Include="UserContents\Record.resx" />
+    <EmbeddedResource Include="UserContents\Talon.resx" />
+    <EmbeddedResource Include="UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="App.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App.Debug.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App.Release.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\PatientServiceSoap\PatientService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataBaseTools\DataBaseTools.csproj">
+      <Project>{586d49ca-b81b-48aa-8562-5f28560ced0e}</Project>
+      <Name>DataBaseTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PatientServiceSoap\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Web\Microsoft.Web.Publishing.Tasks.dll" />
+  <Target Name="BeforeBuild">
+    <TransformXml Source="App.config" Destination="$(OutputPath)$(TargetFileName).config" Transform="App.$(Configuration).config" ContinueOnError="False" StackTrace="True" />
+  </Target>
+  <!---->
+</Project>

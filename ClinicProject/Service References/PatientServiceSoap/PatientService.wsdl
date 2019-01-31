@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/NumberService" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/NumberService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/NumberService">
+      <s:element name="generateTalon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pdate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="pdoctor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ppatient" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="generateTalonResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTalon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pdate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="pdoctor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ppatient" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTalonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTalonResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMedCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ppatient" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMedCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMedCardResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="generateTalonSoapIn">
+    <wsdl:part name="parameters" element="tns:generateTalon" />
+  </wsdl:message>
+  <wsdl:message name="generateTalonSoapOut">
+    <wsdl:part name="parameters" element="tns:generateTalonResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTalonSoapIn">
+    <wsdl:part name="parameters" element="tns:getTalon" />
+  </wsdl:message>
+  <wsdl:message name="getTalonSoapOut">
+    <wsdl:part name="parameters" element="tns:getTalonResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMedCardSoapIn">
+    <wsdl:part name="parameters" element="tns:getMedCard" />
+  </wsdl:message>
+  <wsdl:message name="getMedCardSoapOut">
+    <wsdl:part name="parameters" element="tns:getMedCardResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PatientServiceSoap">
+    <wsdl:operation name="generateTalon">
+      <wsdl:input message="tns:generateTalonSoapIn" />
+      <wsdl:output message="tns:generateTalonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTalon">
+      <wsdl:input message="tns:getTalonSoapIn" />
+      <wsdl:output message="tns:getTalonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMedCard">
+      <wsdl:input message="tns:getMedCardSoapIn" />
+      <wsdl:output message="tns:getMedCardSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PatientServiceSoap" type="tns:PatientServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generateTalon">
+      <soap:operation soapAction="http://tempuri.org/NumberService/generateTalon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTalon">
+      <soap:operation soapAction="http://tempuri.org/NumberService/getTalon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMedCard">
+      <soap:operation soapAction="http://tempuri.org/NumberService/getMedCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PatientServiceSoap12" type="tns:PatientServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generateTalon">
+      <soap12:operation soapAction="http://tempuri.org/NumberService/generateTalon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTalon">
+      <soap12:operation soapAction="http://tempuri.org/NumberService/getTalon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMedCard">
+      <soap12:operation soapAction="http://tempuri.org/NumberService/getMedCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PatientService">
+    <wsdl:port name="PatientServiceSoap" binding="tns:PatientServiceSoap">
+      <soap:address location="http://localhost:56426/PatientService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PatientServiceSoap12" binding="tns:PatientServiceSoap12">
+      <soap12:address location="http://localhost:56426/PatientService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

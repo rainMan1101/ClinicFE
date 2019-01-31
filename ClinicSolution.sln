@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseTools", "DataBaseTools\DataBaseTools.csproj", "{586D49CA-B81B-48AA-8562-5F28560CED0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientService", "PatientService\PatientService.csproj", "{3BC13B81-A36D-4596-8018-E2E07286C10D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicProject", "ClinicProject\ClinicProject.csproj", "{8B4EDDD4-D769-4CC1-B16D-74093EEF7E93}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3BC13B81-A36D-4596-8018-E2E07286C10D} = {3BC13B81-A36D-4596-8018-E2E07286C10D}
+		{C9E339CF-7741-4701-8D0C-B57D2676786F} = {C9E339CF-7741-4701-8D0C-B57D2676786F}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageService", "ImageService\ImageService.csproj", "{C9E339CF-7741-4701-8D0C-B57D2676786F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientProject", "PatientProject\PatientProject.csproj", "{12A67B90-C065-4F71-93B8-BBDA7A8FA3E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteTalons", "DeleteTalons\DeleteTalons.csproj", "{502DA4F9-A5B5-4856-81BB-C86B72F7A585}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{586D49CA-B81B-48AA-8562-5F28560CED0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{586D49CA-B81B-48AA-8562-5F28560CED0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{586D49CA-B81B-48AA-8562-5F28560CED0E}.Release|x86.ActiveCfg = Release|Any CPU
+		{586D49CA-B81B-48AA-8562-5F28560CED0E}.Release|x86.Build.0 = Release|Any CPU
+		{3BC13B81-A36D-4596-8018-E2E07286C10D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BC13B81-A36D-4596-8018-E2E07286C10D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BC13B81-A36D-4596-8018-E2E07286C10D}.Release|x86.ActiveCfg = Release|Any CPU
+		{3BC13B81-A36D-4596-8018-E2E07286C10D}.Release|x86.Build.0 = Release|Any CPU
+		{8B4EDDD4-D769-4CC1-B16D-74093EEF7E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B4EDDD4-D769-4CC1-B16D-74093EEF7E93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B4EDDD4-D769-4CC1-B16D-74093EEF7E93}.Release|x86.ActiveCfg = Release|Any CPU
+		{8B4EDDD4-D769-4CC1-B16D-74093EEF7E93}.Release|x86.Build.0 = Release|Any CPU
+		{C9E339CF-7741-4701-8D0C-B57D2676786F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E339CF-7741-4701-8D0C-B57D2676786F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E339CF-7741-4701-8D0C-B57D2676786F}.Release|x86.ActiveCfg = Release|Any CPU
+		{C9E339CF-7741-4701-8D0C-B57D2676786F}.Release|x86.Build.0 = Release|Any CPU
+		{12A67B90-C065-4F71-93B8-BBDA7A8FA3E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12A67B90-C065-4F71-93B8-BBDA7A8FA3E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12A67B90-C065-4F71-93B8-BBDA7A8FA3E3}.Release|x86.ActiveCfg = Release|Any CPU
+		{12A67B90-C065-4F71-93B8-BBDA7A8FA3E3}.Release|x86.Build.0 = Release|Any CPU
+		{502DA4F9-A5B5-4856-81BB-C86B72F7A585}.Release|Any CPU.ActiveCfg = Release|x86
+		{502DA4F9-A5B5-4856-81BB-C86B72F7A585}.Release|Any CPU.Build.0 = Release|x86
+		{502DA4F9-A5B5-4856-81BB-C86B72F7A585}.Release|x86.ActiveCfg = Release|x86
+		{502DA4F9-A5B5-4856-81BB-C86B72F7A585}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
